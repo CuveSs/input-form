@@ -1,0 +1,303 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #3b208d;
+    --secondary-color: #ed9a9e;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    background: #f9f9fb;
+}
+
+body,
+input,
+textarea,
+button {
+    font-size: 1.6rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+main {
+    margin: 48px 0;
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 870px;
+    margin: 60px auto 0;
+    padding: 6px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+}
+
+.heading h1 {
+    color: #050545;
+    font-weight: 900;
+    font-size: 3.2rem;
+}
+
+.heading p {
+    margin-top: 16px;
+    color: #8d8d9f;
+}
+
+/* Contact info */
+.contact-info {
+    position: relative;
+    flex-shrink: 0;
+    width: 330px;
+    padding: 24px 30px 30px;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--primary-color);
+    overflow: hidden;
+}
+
+.contact-info h2 {
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+.contact-info .desc {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #9e8dd3;
+}
+
+.contact-info .info-item {
+    margin-top: 36px;
+}
+
+.contact-info .info-item .icon {
+    display: inline-block;
+    width: 18px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.contact-info .info-item .value {
+    margin-left: 8px;
+    font-size: 1.3rem;
+    color: #e0cff3;
+}
+
+.socials {
+    display: flex;
+    column-gap: 10px;
+    margin-top: 110px;
+}
+
+.socials .item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.socials .item:hover {
+    background: var(--secondary-color);
+}
+
+.circle {
+    position: absolute;
+    right: 55px;
+    bottom: 60px;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #7955f3;
+    opacity: 0.95;
+}
+
+.circle.large {
+    right: -110px;
+    bottom: -110px;
+    z-index: 0;
+    width: 250px;
+    height: 250px;
+    opacity: 1;
+    background: var(--secondary-color);
+}
+
+/* =================================Contact-form======================================= */
+
+.contact-form {
+    flex-grow: 1;
+    padding: 28px 32px;
+}
+
+.contact-form:has(:invalid) .btn {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.form-row {
+    display: flex;
+    column-gap: 32px;
+    margin-bottom: 30px;
+}
+
+.form-label,
+.form-input {
+    display: block;
+}
+
+.form-group {
+    flex-grow: 1;
+}
+
+.form-group:focus-within .form-label:not(.large) {
+    color: #3b208d;
+}
+
+.form-group:focus-within .form-input {
+    border-color: #3b208d;
+}
+
+.form-group:focus-within .form-textarea {
+    border-color: #3b208d;
+}
+
+.form-group:has(:invalid:not(:placeholder-shown)) .form-error {
+    display: block;
+}
+
+.form-label {
+    color: #9e8dd3;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.form-label.large {
+    font-size: 1.6rem;
+    color: #04043e;
+}
+
+.form-label.small {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #04043e;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 8px 0 14px 0;
+    border-bottom: 2px solid #e3e3e9;
+    color: #04043e;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #bebfc9;
+}
+
+.form-textarea {
+    resize: none;
+    max-height: 200px;
+}
+
+.form-error {
+    display: none;
+    margin-top: 4px;
+    color: red;
+    font-size: 1.2rem;
+}
+
+/* ===============Radio===================== */
+.radio-group {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio-btn label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #2b2c67;
+    font-size: 1.4rem;
+}
+
+.radio-btn label::before,
+.radio-btn label::after {
+    display: inline-block;
+    content: "";
+}
+
+.radio-btn label::before {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #9495b2;
+    margin-right: 6px;
+}
+
+.radio-btn [type="radio"]:checked ~ label::before {
+    background: #3b208d;
+    border-color: #3b208d;
+}
+
+.radio-btn [type="radio"]:checked ~ label::after {
+    position: absolute;
+    top: 7px;
+    left: 3px;
+    width: 7px;
+    height: 3px;
+    background: #3b208d;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    rotate: -45deg;
+}
+
+.radio-btn [type="radio"] {
+    display: none;
+}
+
+.submit-box {
+    justify-content: flex-end;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 160px;
+    height: 50px;
+    color: #fff;
+    background: #3e2093;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
