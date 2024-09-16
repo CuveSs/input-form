@@ -158,7 +158,11 @@ main {
 .form-row {
     display: flex;
     column-gap: 32px;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
+}
+
+.form-row:last-child {
+    margin-bottom: 0;
 }
 
 .form-label,
@@ -183,7 +187,7 @@ main {
 }
 
 .form-group:has(:invalid:not(:placeholder-shown)) .form-error {
-    display: block;
+    visibility: visible;
 }
 
 .form-label {
@@ -224,7 +228,7 @@ main {
 }
 
 .form-error {
-    display: none;
+    visibility: hidden;
     margin-top: 4px;
     color: red;
     font-size: 1.2rem;
